@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg12">
+      <h1>Enter your name and email for quick login</h1>
+      <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+        <fieldset [disabled]="isSubmitting">
+          <fieldset class="form-group">
+            <input
+            formControlName="name"
+            placeholder="Username"
+            class="form-control form-control-lg"
+            type="text" 
+            required
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+            formControlName="email"
+            placeholder="Email"
+            class="form-control form-control-lg"
+            type="text" email required/>
+          </fieldset>
+          <button class="btn btn-lg btn-primary pull-xs-right" [disabled]="!authForm.valid" type="submit">Submit
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
