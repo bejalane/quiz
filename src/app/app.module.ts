@@ -18,10 +18,13 @@ import { RoomService } from './room/room.service';
 import { SharedModule }  from './shared/shared.module';
 import { HttpClientService } from './shared/services/httpclient.service';
 
+import { SocketIoModule, SocketIoConfig } from 'ng2-socket-io';
+
+const config: SocketIoConfig = { url: 'http://quiz.slstaging.tk:6560', options: {} };
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
 @NgModule({
-  imports:      [ BrowserModule, rootRouting, LoginModule, DashboardModule, RoomModule],
+  imports:      [ BrowserModule, rootRouting, LoginModule, DashboardModule, RoomModule, SocketIoModule.forRoot(config) ],
   declarations: [ AppComponent ],
   providers: [ RoomService, DashboardService, LoginService, HttpClientService],
   bootstrap:    [ AppComponent ]
