@@ -11,7 +11,7 @@ import 'rxjs/add/operator/catch';
 export class RoomService {
 	constructor(private _http: HttpClientService){}
 	
-	joinRoom(id): Observable<any> {
+	joinRoom(id:number): Observable<any> {
 		return this._http.get(environment.url + 'room/join/' + id)
 			.map((response:Response) => response.json())
 			.catch((error:any) => Observable.throw(error.json().error || 'Server error'))

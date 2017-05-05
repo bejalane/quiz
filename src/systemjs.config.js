@@ -23,6 +23,7 @@
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       'ng2-cookies': 'node_modules/ng2-cookies',
+      "socket.io-client": "node_modules/socket.io-client/dist/socket.io.js",
 
       // other libraries
       'rxjs':                      'npm:rxjs',
@@ -32,6 +33,7 @@
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       "ng2-cookies": { defaultExtension: 'js' },
+      "socket.io-client": {"defaultExtension": "js"},
       app: {
         defaultExtension: 'js',
         meta: {
